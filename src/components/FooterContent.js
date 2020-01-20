@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const Wrapper = styled.div`
     max-width: none;
@@ -7,6 +9,7 @@ const Wrapper = styled.div`
     margin-left: auto;
     padding-right: 30px;
     padding-left: 30px;
+    padding-bottom: 0px;
 
     @media screen and (max-width: 800px){
         padding-right: 15px;
@@ -32,6 +35,7 @@ const ColWrapper = styled.div`
 `;
 
 const Col = styled.div`
+    float: left;
     @media screen and (max-width: 600px) {
         float: none;
         width: calc(100% - (30px / 2));
@@ -39,7 +43,7 @@ const Col = styled.div`
 `;
 
 const Col3 = styled(Col).attrs({as: 'div'})`
-    width: width: calc(45% - (30px / 2));
+    width: calc(45% - (30px / 2));
     @media screen and (max-width: 800px) {
         width: calc(100% - (30px / 2));
     }
@@ -85,8 +89,7 @@ export const FooterContent = ({name, image, imageSrc, imageAlt}) => (
                         Shaun Vaughn
                     </li>
                     <li>
-                        <a href="mailto:vaughnshaun@gmail.com"
-                        >
+                        <a href="mailto:vaughnshaun@gmail.com">
                             vaughnshaun@gmail.com
                         </a>
                     </li>
@@ -94,22 +97,18 @@ export const FooterContent = ({name, image, imageSrc, imageAlt}) => (
             </Col3>
             <Col3>
                 <SocialMediaList>
-                    {/*<li>
-                        <a href="https://github.com/VaughnShaun">
-                            <SvgIcon>
-                                <use xlink:href="/assets/minima-social-icons.svg#github"></use>
-                            </SvgIcon> 
-                            <span class="username">VaughnShaun</span>
+                    <li>
+                    <FontAwesomeIcon style={{marginRight: 5}} size="lg" icon={faGithub} />
+                        <a href="https://github.com/VaughnShaun" target="_blank">
+                            <span className="username">VaughnShaun</span>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/ShaunVaughn">
-                            <SvgIcon class="svg-icon">
-                                <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
-                            </SvgIcon> 
-                            <span class="username">ShaunVaughn</span>
+                    <FontAwesomeIcon style={{marginRight: 5}} size="lg" icon={faLinkedin} />
+                        <a href="https://www.linkedin.com/in/ShaunVaughn" target="_blank">
+                            <span className="username">ShaunVaughn</span>
                         </a>
-                    </li>*/}
+                    </li>
                 </SocialMediaList>
             </Col3>
         </ColWrapper>

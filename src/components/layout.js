@@ -37,7 +37,8 @@ const Footer = styled.footer`
 border-top-style: solid;
 border-top-width: 1px;
 border-color: #e1e1e1;
-padding: 30px 0;
+padding: 30px;
+padding-bottom: 0px;
 background: rgba(220,220,220,0.5);
 `;
 

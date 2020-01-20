@@ -21,8 +21,13 @@ const LinkContainer= styled.div`
 const SiteHeader= styled.h1`
   margin: 0;
   float: left;
+  color: #424242;
+  
   > a {
-    color: white;
+    color: #424242;
+    :visited {
+      color: #424242;
+    }
     text-decoration: none;
     /*:hover {
       color: #24e1ff;
