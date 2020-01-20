@@ -10,7 +10,36 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./layout.css";
+import "./layout.override.css";
+import styled from 'styled-components';
+import { FooterContent } from "./FooterContent";
+
+const BodyInner = styled.div`
+max-width: 2000px;
+border-style: solid;
+border-width: 0px;
+border-left-width: 2px;
+border-right-width: 2px;
+border-color: lightgray;
+margin: auto;
+box-sizing: border-box;
+font-feature-settings: "kern" 1;
+font-kerning: normal;
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+position: relative;
+`;
+
+const Footer = styled.footer`
+border-top-style: solid;
+border-top-width: 1px;
+border-color: #e1e1e1;
+padding: 30px 0;
+background: rgba(220,220,220,0.5);
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,24 +53,13 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <BodyInner>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+      <main style={{flex: 1, paddingTop: 75}}>{children}</main>
+        <Footer>
+          <FooterContent></FooterContent>
+        </Footer>
+    </BodyInner>
   )
 }
 

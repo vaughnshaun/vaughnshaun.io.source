@@ -1,42 +1,77 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from 'styled-components';
+
+const LinkContainer= styled.div`
+  float: right;
+  position: relative;
+  top: 10px;
+
+  > a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    :hover {
+      color: #24e1ff;
+    }
+  }
+`;
+
+const SiteHeader= styled.h1`
+  margin: 0;
+  float: left;
+  > a {
+    color: white;
+    text-decoration: none;
+    /*:hover {
+      color: #24e1ff;
+    }*/
+  }
+`;
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: 'white',
+      borderTopStyle: 'solid',
+      borderWidth: 4,
+      boxShadow: '0px 1px 7px 1px grey',
+      position: 'relative',
+      position: 'fixed',
+      width: '100%',
+      zIndex: 99
+      //marginBottom: `1.45rem`
     }}
   >
     <div
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: 10,
+        height: 70,
+        margin: 'auto'
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <SiteHeader>
         <Link
           to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
         >
           {siteTitle}
         </Link>
-      </h1>
+      </SiteHeader>
+      {/*<LinkContainer>
+        <Link to="/Blog">Blog</Link>
+        <Link to="/Profile">Profile</Link>
+      </LinkContainer>*/}
     </div>
   </header>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;
