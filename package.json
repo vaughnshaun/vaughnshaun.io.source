@@ -39,7 +39,7 @@
   "scripts": {
     "build": "gatsby build",
     "gh-pages-help": "gh-pages --help",
-     "deploy": "gatsby build gh-pages -d public -b master -r https://github.com/vaughnshaun/vaughnshaun.github.io",
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/vaughnshaun/vaughnshaun.github.io",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
