@@ -196,11 +196,11 @@ const IndexPage = ({data}) => (
           logoBorder="none"
           description={
           <React.Fragment>
-            Proficient with alogrithms and data structures in multiple languages including: C#, C++, JavaScript, and Java.
+            <span>Proficient with alogrithms and data structures in multiple languages including: C#, C++, JavaScript, and Java.
             I Have used and implemented various algorithms and data structures for work and as a hobby. This is evident but
-            not limited to work shown at
-            <a style={{marginLeft: '5px'}} target="_blank" href="https://github.com/vaughnshaun/ComputerScience">
-              https://github.com/vaughnshaun/ComputerScience
+            not limited to work shown at</span>
+            <a style={{marginLeft: '5px'}} target="_blank" rel="noopener noreferrer" href="https://github.com/vaughnshaun/ComputerScience">
+              my computer science github repository
             </a>.
           </React.Fragment>
           }

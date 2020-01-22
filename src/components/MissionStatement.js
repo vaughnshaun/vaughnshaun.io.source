@@ -11,8 +11,8 @@ const MissionHeader = styled.div`
 `;
 
 const MissionContent = styled.div`
-    font-size: 20px;
     margin-bottom: 20px;
+    font-size: 18px;
 `;
 
 export function MissionStatement(props){

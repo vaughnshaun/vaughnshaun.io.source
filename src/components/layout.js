@@ -33,6 +33,11 @@ flex-direction: column;
 position: relative;
 `;
 
+const Main = styled.main`
+  flex: 1;
+  /*paddingTop: 75;*/
+`;
+
 const Footer = styled.footer`
 border-top-style: solid;
 border-top-width: 1px;
@@ -55,8 +60,8 @@ const Layout = ({ children }) => {
 
   return (
     <BodyInner>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <main style={{flex: 1, paddingTop: 75}}>{children}</main>
+      {/*<Header siteTitle={data.site.siteMetadata.title} />*/}
+      <Main>{children}</Main>
         <Footer>
           <FooterContent></FooterContent>
         </Footer>

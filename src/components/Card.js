@@ -30,7 +30,7 @@ const Content = styled.div`
 `;
 
 const Header = styled.div`
-    font-size: 22px;
+    font-size: 24px;
 `;
 
 const Meta = styled.div`

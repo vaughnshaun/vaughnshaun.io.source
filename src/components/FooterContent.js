@@ -10,6 +10,7 @@ const Wrapper = styled.div`
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 0px;
+    font-size: 18px;
 
     @media screen and (max-width: 800px){
         padding-right: 15px;
@@ -30,7 +31,6 @@ const Header = styled.h2`
 `;
 
 const ColWrapper = styled.div`
-    font-size: 15px;
     color: #828282;
 `;
 
@@ -76,12 +76,6 @@ const SocialMediaList = styled.ul`
 
 export const FooterContent = ({name, image, imageSrc, imageAlt}) => (
     <Wrapper>
-        <Header>
-            Shaun Vaughn
-            <div style={{fontSize: 16}}>
-                <p>The personal blog of Shaun Vaughn</p>
-            </div>
-        </Header>
         <ColWrapper>
             <Col3>
                 <ContactList>
@@ -99,13 +93,13 @@ export const FooterContent = ({name, image, imageSrc, imageAlt}) => (
                 <SocialMediaList>
                     <li>
                     <FontAwesomeIcon style={{marginRight: 5}} size="lg" icon={faGithub} />
-                        <a href="https://github.com/VaughnShaun" target="_blank">
+                        <a href="https://github.com/VaughnShaun" target="_blank" rel="noopener noreferrer">
                             <span className="username">VaughnShaun</span>
                         </a>
                     </li>
                     <li>
                     <FontAwesomeIcon style={{marginRight: 5}} size="lg" icon={faLinkedin} />
-                        <a href="https://www.linkedin.com/in/ShaunVaughn" target="_blank">
+                        <a href="https://www.linkedin.com/in/ShaunVaughn" target="_blank" rel="noopener noreferrer">
                             <span className="username">ShaunVaughn</span>
                         </a>
                     </li>
