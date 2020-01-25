@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, {useEffect} from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -16,12 +16,19 @@ import "./layout.override.css";
 import styled from 'styled-components';
 import { FooterContent } from "./FooterContent";
 
+const Body = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,#efefef,rgba(200, 200, 200, .1));
+`;
+
 const BodyInner = styled.div`
-max-width: 2000px;
+max-width: 1400px;
 border-style: solid;
 border-width: 0px;
-border-left-width: 2px;
-border-right-width: 2px;
+border-left-width: 1px;
+border-right-width: 1px;
 border-color: lightgray;
 margin: auto;
 box-sizing: border-box;
@@ -31,6 +38,7 @@ display: flex;
 min-height: 100vh;
 flex-direction: column;
 position: relative;
+background: white;
 `;
 
 const Main = styled.main`
@@ -47,7 +55,26 @@ padding-bottom: 0px;
 background: rgba(220,220,220,0.5);
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, style }) => {
+  useEffect(() => {
+    var prevScrollpos = window.pageYOffset;
+    function removeNavOnScrollDown(){
+      var siteHeader = document.getElementById("my-site-header");
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        siteHeader.style.top = "0";
+      } else {
+        siteHeader.style.top = -siteHeader.clientHeight + 'px';
+      }
+      prevScrollpos = currentScrollPos;
+    }
+    window.addEventListener("scroll", removeNavOnScrollDown);
+
+    return () => {
+      window.removeEventListener("scroll", removeNavOnScrollDown);
+    };
+  }, []);
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -59,13 +86,15 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <BodyInner>
-      {/*<Header siteTitle={data.site.siteMetadata.title} />*/}
-      <Main>{children}</Main>
-        <Footer>
-          <FooterContent></FooterContent>
-        </Footer>
-    </BodyInner>
+    <Body style={style}>
+      <BodyInner>
+        {<Header id="my-site-header" siteTitle={data.site.siteMetadata.title} />}
+        <Main>{children}</Main>
+          <Footer>
+            <FooterContent></FooterContent>
+          </Footer>
+      </BodyInner>
+    </Body>
   )
 }
 

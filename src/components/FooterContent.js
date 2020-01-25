@@ -37,7 +37,7 @@ const ColWrapper = styled.div`
 const Col = styled.div`
     float: left;
     @media screen and (max-width: 600px) {
-        float: none;
+        float: none !important;
         width: calc(100% - (30px / 2));
     }
 `;
@@ -77,7 +77,7 @@ const SocialMediaList = styled.ul`
 export const FooterContent = ({name, image, imageSrc, imageAlt}) => (
     <Wrapper>
         <ColWrapper>
-            <Col3>
+            <Col3 style={{width: 'auto'}}>
                 <ContactList>
                     <li>
                         Shaun Vaughn
@@ -89,7 +89,7 @@ export const FooterContent = ({name, image, imageSrc, imageAlt}) => (
                     </li>
                 </ContactList>
             </Col3>
-            <Col3>
+            <Col3 style={{float: 'right', width: 'auto'}}>
                 <SocialMediaList>
                     <li>
                     <FontAwesomeIcon style={{marginRight: 5}} size="lg" icon={faGithub} />

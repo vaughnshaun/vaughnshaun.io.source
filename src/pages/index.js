@@ -18,6 +18,7 @@ const Mission = styled.div`
   position: relative;
   width: 100%;
   z-index: 1;
+  padding-top: 30px;
   background-image: url('${backgroundImage}');
   @media (max-width: 1200px) {
     min-height: 400px;
@@ -29,6 +30,7 @@ const MissionStatementContainer = styled.div`
   width: 50%;
   min-height: 1px;
   padding: 50px;
+  padding-left: 20px;
   padding-bottom: 0px;
   box-sizing: border-box;
   position: relative;
@@ -36,6 +38,7 @@ const MissionStatementContainer = styled.div`
   @media (max-width: 800px) {
     width: 100%;
     padding: 20px;
+    padding-top: 50px;
     padding-bottom: 0px;
   }
 `;
@@ -86,6 +89,7 @@ const ProfileContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  background: white;
   .svg-inline--fa {
     color: #0f7bc1;
   }
@@ -103,6 +107,7 @@ const ProfileSection = styled.div`
 
 const MissionColor = styled.div`
   position: absolute;
+  top: 0px;
   width: 100%;
   height: 100%;
   z-index: 2;

@@ -22,7 +22,7 @@ const SiteHeader= styled.h1`
   margin: 0;
   float: left;
   color: #424242;
-  
+  font-size: 24px;
   > a {
     color: #424242;
     :visited {
@@ -35,24 +35,30 @@ const SiteHeader= styled.h1`
   }
 `;
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, id }) => (
   <header
+    id={id}
     style={{
       background: 'white',
-      borderTopStyle: 'solid',
-      borderWidth: 4,
-      boxShadow: '0px 1px 7px 1px grey',
-      position: 'relative',
+      borderWidth: 1,
+      boxShadow: '0px -2px 5px 1px gainsboro',
+      borderBottomColor: 'gainsboro',
+      borderBottomStyle: 'solid',
       position: 'fixed',
       width: '100%',
-      zIndex: 99
+      zIndex: 99,
+      paddingLeft: 20,
+      top: 0,
+      left: 0,
+      transition: 'top 0.3s' /* Transition effect when sliding down (and up) */
       //marginBottom: `1.45rem`
     }}
   >
     <div
       style={{
         padding: 10,
-        height: 70,
+        height: 55,
+        maxWidth: 1400,
         margin: 'auto'
       }}
     >
